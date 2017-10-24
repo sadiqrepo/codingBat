@@ -1,5 +1,6 @@
 package hackerrank.thirtyDaysOfCode;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -53,4 +54,50 @@ public class Day4 {
         sc.close();
     }
 
+    /**
+     * Created by sadiq on 19/10/17.
+     */
+    public static class Day6 {
+
+        public static void main(String[] args) throws Exception{
+
+
+            //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+            try {
+                //Read input from the console
+                Scanner in = new Scanner(System.in);
+                //int noOfLines = Integer.parseInt(br.readLine());
+                int noOfLines = Integer.parseInt(in.nextLine());
+
+                String[] input = new String[noOfLines];
+
+                for (int i = 0; i <= noOfLines; i++) {
+
+                    //System.out.println("Word "+(i+1));
+                    //input[i] = br.readLine();
+                    input[i] = in.nextLine();
+
+                    // Creating an array of type String to store the words provided in each line.
+
+                    char[] myCharArray = input[i].toCharArray();
+                    for (int j = 0; j < input[i].length(); j += 2) {
+                        // Print each sequential character on the same line
+                        System.out.print(myCharArray[j]);
+                    }
+                    System.out.print(" ");
+                    for (int k = 1; k < input[i].length(); k += 2) {
+                        // Print each sequential character on the same line
+                        System.out.print(myCharArray[k]);
+                    }
+                    System.out.println();
+                }
+            }catch (NoSuchElementException e){
+                e.getMessage();
+            }
+
+
+
+        }
+    }
 }
